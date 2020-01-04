@@ -1,4 +1,10 @@
+import os
+import sys
 import pytest
+
+app_path = os.path.join(os.path.dirname(__file__), '..')
+sys.path.insert(0, app_path)
+
 import index
 
 
