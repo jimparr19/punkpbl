@@ -7,6 +7,7 @@ sys.path.insert(0, app_path)
 
 from app import server
 
+
 @pytest.fixture
 def app():
     return server
