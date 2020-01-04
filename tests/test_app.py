@@ -5,13 +5,11 @@ import pytest
 app_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, app_path)
 
-import index
-
+from app import server
 
 @pytest.fixture
 def app():
-    app = index.app
-    return app.server
+    return server
 
 
 def test_available(client):

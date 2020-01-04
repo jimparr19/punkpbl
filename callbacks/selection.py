@@ -1,5 +1,5 @@
 from dash.dependencies import Input, Output, State
-from app import app
+from main import app
 from config import punk_df
 
 import numpy as np
