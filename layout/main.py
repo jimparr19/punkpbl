@@ -4,6 +4,8 @@ import dash_html_components as html
 
 logo_image = '/assets/img/brewdog-logo.png'
 
+preference_data = {'preferences': [], 'tasted': []}
+
 nav_links = dbc.Row(
     children=[],
     id='nav-items',
@@ -45,6 +47,10 @@ main_layout = html.Div(
         ),
         html.Div(
             id='hidden_data',
+            style={'display': 'none'}
+        ),
+        html.Div(
+            id='preference_data',
             style={'display': 'none'}
         )
     ]

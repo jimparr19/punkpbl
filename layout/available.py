@@ -33,4 +33,18 @@ available_layout = [
             )
         ],
     ),
+    dbc.Row(
+        children=[
+            dbc.Col(
+                md=9
+            ),
+            dbc.Col(
+                children=[
+                    dbc.Col(dbc.Button("Next", id="btn_to_selection", color="light", size="lg", block=True,
+                                       href="selection")),
+                ],
+                md=3
+            )
+        ],
+        className='mt-3 mb-3'),
 ]

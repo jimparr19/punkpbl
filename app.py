@@ -5,10 +5,10 @@ from dash.dependencies import Input, Output, State
 from main import app
 from layout.main import main_layout
 from layout.splash import splash_layout
-from layout.selection import selection_layout
+from layout.selection import get_selection_layout
 from layout.available import available_layout
 
-from callbacks import splash  # noqa
+# from callbacks import splash  # noqa
 from callbacks import available  # noqa
 from callbacks import selection  # noqa
 
@@ -19,14 +19,15 @@ server = app.server
 # update page based on url
 @app.callback(
     Output('page_content', 'children'),
-    [Input('url', 'pathname')])
-def display_page(pathname):  # noqa
+    [Input('url', 'pathname')],
+    [State('hidden_data', 'value')])
+def display_page(pathname, data):  # noqa
     if pathname == '/':
         return splash_layout
     elif pathname == '/available':
         return available_layout
     elif pathname == '/selection':
-        return selection_layout
+        return get_selection_layout(data)
 
 
 # update navbar items based on page
@@ -38,13 +39,28 @@ def change_navbar(pathname):  # noqa
         return []
     elif pathname == '/available':
         navbar_items = [
-            dbc.Col(dbc.NavLink("Beers", id='available-link', href="available", className='nav_link active')),
-            dbc.Col(dbc.NavLink("PBL", id='selection-link', href="selection", className='nav_link')),
+            dbc.Col(dbc.NavLink("Available", id='available-link', href="available", className='nav_link active')),
+            dbc.Col(dbc.NavLink("Selection", id='selection-link', href="selection", className='nav_link')),
+            dbc.Col(
+                dbc.NavLink("Recommendation", id='recommendation-link', href="recommendation", className='nav_link')
+            ),
         ]
     elif pathname == '/selection':
         navbar_items = [
-            dbc.Col(dbc.NavLink("Beers", id='available-link', href="available", className='nav_link')),
-            dbc.Col(dbc.NavLink("PBL", id='selection-link', href="selection", className='nav_link active')),
+            dbc.Col(dbc.NavLink("Available", id='available-link', href="available", className='nav_link')),
+            dbc.Col(dbc.NavLink("Selection", id='selection-link', href="selection", className='nav_link active')),
+            dbc.Col(
+                dbc.NavLink("Recommendation", id='recommendation-link', href="recommendation", className='nav_link')
+            ),
+        ]
+    elif pathname == '/recommendation':
+        navbar_items = [
+            dbc.Col(dbc.NavLink("Available", id='available-link', href="available", className='nav_link')),
+            dbc.Col(dbc.NavLink("Selection", id='selection-link', href="selection", className='nav_link')),
+            dbc.Col(
+                dbc.NavLink("Recommendation", id='recommendation-link', href="recommendation",
+                            className='nav_link active')
+            ),
         ]
     else:
         navbar_items = []
