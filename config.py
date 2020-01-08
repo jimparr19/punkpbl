@@ -1,9 +1,6 @@
 import os
 import pandas as pd
 import dash_bootstrap_components as dbc
-from matplotlib.colors import ListedColormap
-from xml.dom import minidom
-import numpy as np
 
 config_path = os.path.dirname(__file__)
 
