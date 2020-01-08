@@ -58,6 +58,7 @@ def pbl_update(n_clicks_left, n_clicks_right, left_beer_name, right_beer_name,
     if len(preference_data['not_tasted']) > 0:
         return preference_data, False, False
     else:
+        print(preference_data)
         return preference_data, True, True
 
 
