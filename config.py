@@ -8,7 +8,7 @@ config_path = os.path.dirname(__file__)
 THEME = dbc.themes.BOOTSTRAP
 
 # Data
-punk_df = pd.read_pickle(os.path.join(config_path, 'punk_df_201910152214.pickle'))
+punk_df = pd.read_pickle(os.path.join(config_path, 'punk_df_202001181918.pickle'))
 
 # Default beers
 available_beers = [
@@ -21,4 +21,4 @@ available_beers = [
     'Clockwork Tangerine'
 ]
 
-features = ['abv', 'ibu', 'ebc']
+features = ['abv', 'ibu', 'ebc', 'n_hops']

@@ -61,11 +61,14 @@ def display_page(pathname, data, preference_data):  # noqa
         table = rank_df.sort_values(by='utility', ascending=False)
         table['beer'] = table.index.values
         table['abv'] = all_beers_df.loc[table.index, 'abv'].div(100).values
+        table['ibu'] = all_beers_df.loc[table.index, 'ibu'].values
+        table['hops'] = all_beers_df.loc[table.index, 'n_hops'].values
         table['color'] = all_beers_df.loc[table.index, 'ebc'].values
         table['tasted'] = ["yes" if (beer in tasted_table.index) else "no" for beer in table.index]
-        cols = ['beer', 'utility', 'tasted', 'abv', 'color']
+        cols = ['beer', 'utility', 'tasted', 'abv', 'ibu', 'hops', 'color']
         table = table[cols]
-        return get_recommendation_layout(tasted_table, table)
+        weights_table = pd.DataFrame({col: [weight] for col, weight in zip(model.data.columns, model.weights)})
+        return get_recommendation_layout(tasted_table, table, weights_table)
 
 
 # update navbar items based on page
