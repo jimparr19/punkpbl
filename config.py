@@ -12,13 +12,15 @@ punk_df = pd.read_pickle(os.path.join(config_path, 'punk_df_202001181918.pickle'
 
 # Default beers
 available_beers = [
-    'Punk IPA 2010 - Current',
-    'Dead Pony Club',
-    'Elvis Juice V2.0 - Prototype Challenge',
-    'Hazy Jane',
     'Indie Pale Ale',
     'Hazy Jane',
-    'Clockwork Tangerine'
+    'Kingpin',
+    'Punk IPA 2010 - Current',
+    'Clockwork Tangerine',
+    'Vagabond Pale ALe - Prototype Challenge',
+    '5am Saint',
+    'Elvis Juice V2.0 - Prototype Challenge',
+    'Dead Pony Club',
 ]
 
 features = ['abv', 'ibu', 'ebc', 'n_hops']
