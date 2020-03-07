@@ -62,10 +62,11 @@ def display_page(pathname, data, preference_data):  # noqa
         table['beer'] = table.index.values
         table['abv'] = all_beers_df.loc[table.index, 'abv'].div(100).values
         table['ibu'] = all_beers_df.loc[table.index, 'ibu'].values
+        table['ph'] = all_beers_df.loc[table.index, 'ph'].values
         table['hops'] = all_beers_df.loc[table.index, 'n_hops'].values
         table['color'] = all_beers_df.loc[table.index, 'ebc'].values
         table['tasted'] = ["yes" if (beer in tasted_table.index) else "no" for beer in table.index]
-        cols = ['beer', 'utility', 'tasted', 'abv', 'ibu', 'hops', 'color']
+        cols = ['beer', 'utility', 'tasted', 'abv', 'ibu', 'ph', 'hops', 'color']
         table = table[cols]
         weights_table = pd.DataFrame({col: [weight] for col, weight in zip(model.data.columns, model.weights)})
         return get_recommendation_layout(tasted_table, table, weights_table)

@@ -19,6 +19,7 @@ def get_recommendation_layout(tasted_table, table, weights_table):
                                  {'id': 'abv', 'name': 'abv', 'type': 'numeric',
                                   'format': FormatTemplate.percentage(1)},
                                  {'id': 'ibu', 'name': 'ibu', 'type': 'numeric', 'format': Format(precision=2)},
+                                 {'id': 'ph', 'name': 'ph', 'type': 'numeric', 'format': Format(precision=2)},
                                  {'id': 'hops', 'name': 'hops', 'type': 'numeric'},
                                  {'id': 'color', 'name': 'color'},
                                  ],

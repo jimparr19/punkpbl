@@ -149,4 +149,4 @@ available_beers = [
     'Zombie Cake',
 ]
 
-features = ['abv', 'ibu', 'ebc', 'n_hops']
+features = ['abv', 'ibu', 'ebc', 'n_hops', 'ph']
