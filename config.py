@@ -147,6 +147,7 @@ available_beers = [
     'Dead Pony Club',
     'Lost Lager',
     'Zombie Cake',
+    'Quench Quake'
 ]
 
 features = ['abv', 'ibu', 'ebc', 'n_hops', 'ph']
