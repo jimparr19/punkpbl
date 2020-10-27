@@ -1,7 +1,7 @@
 # punkpbl
 
 [![Actions Status](https://github.com/jimparr19/punkpbl/workflows/pythonapp/badge.svg)](https://github.com/jimparr19/punkpbl/actions)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=punkpbl)](https://punkpbl.herokuapp.com/)
+[![Heroku App Status](http://heroku-shields.herokuapp.com/punkpbl)](https://punkpbl.herokuapp.com)
 
 **punkpbl** is a web application for learning individual preferences for BrewDog beer through pairwise comparisons.
 
