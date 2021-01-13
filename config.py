@@ -127,6 +127,42 @@ quench_quake_df = pd.DataFrame({
 })
 punk_df = punk_df.append(quench_quake_df, ignore_index=True, sort=True)
 
+# Add RASPBERRY BLITZ
+raspberry_blitz_df = pd.DataFrame({
+    'name': ['Raspberry Blitz'],
+    'tagline': ['ALCOHOL FREE SOUR.'.capitalize()],
+    'first_brewed': ['2018'],
+    'description': [
+        '''One of our longest running brews returned as a brand new take on a fruity kettle sour. Inspired by our old favourite Berliner Weisse Raspberry Blitz, and using our recent Raspberry Popsicle Parade as a testing ground, this is an alcohol free Berliner Weisse, jam-packed with fruit flavour.'''],
+    'image_url': ['https://images.punkapi.com/v2/keg.png'],
+    'abv': [0.5],
+    'ibu': [10.0],
+    'target_fg': [1008.0],
+    'target_og': [1011.5],
+    'ebc': [3],
+    'srm': [2.0],
+    'ph': [3.8],
+    'attenuation_level': [30.0],
+    'volume': [{'value': 20, 'unit': 'litres'}],
+    'boil_volume': [{'value': 25, 'unit': 'litres'}],
+    'method': [{'mash_temp': [{'temp': {'value': 62, 'unit': 'celsius'}, 'duration': 20}],
+                'fermentation': {'temp': {'value': 21, 'unit': 'celsius'}},
+                'twist': 'Raspberry Juice: 4kg at FV, Lactic Acid: 55g at FV, Malic Acid: 3g at FV'}],
+    'ingredients': [{'malt': [{'name': 'Pale Ale', 'amount': {'value': 0.1, 'unit': 'kilograms'}},
+                              {'name': 'Wheat Malt', 'amount': {'value': 0.1, 'unit': 'kilograms'}},
+                              {'name': 'Carapils Malt', 'amount': {'value': 0.13, 'unit': 'kilograms'}},
+                              {'name': 'Flaked Oat Malt', 'amount': {'value': 0.15, 'unit': 'kilograms'}}],
+                     'hops': [{'name': 'Hallertauer Taurus', 'amount': {'value': 4, 'unit': 'grams'}, 'add': 'HDI',
+                               'attribute': 'Bittering'}],
+                     'yeast': 'Wyeast 1272'}],
+    'food_pairing': [['Balsamic Glazed Chicken', 'Brie and Goats Cheese Topped Pizza', 'White Chocolate Cookies']],
+    'brewers_tips': ['For extra body, add a little milk sugars (lactose) to the brew.'],
+    'contributed_by': ['Jim Parr jimparr19@googlemail.com'],
+    'n_malt': [4],
+    'n_hops': [1]
+})
+punk_df = punk_df.append(raspberry_blitz_df, ignore_index=True, sort=True)
+
 # Others to add
 # HOP FICTION
 # PARADOX ISLAY
@@ -138,7 +174,6 @@ punk_df = punk_df.append(quench_quake_df, ignore_index=True, sort=True)
 available_beers = [
     'Indie Pale Ale',
     'Hazy Jane',
-    'Kingpin',
     'Punk IPA 2010 - Current',
     'Clockwork Tangerine',
     'Vagabond Pale ALe - Prototype Challenge',
@@ -147,7 +182,9 @@ available_beers = [
     'Dead Pony Club',
     'Lost Lager',
     'Zombie Cake',
-    'Quench Quake'
+    'Quench Quake',
+    'Raspberry Blitz',
+    'Cocoa Psycho'
 ]
 
 features = ['abv', 'ibu', 'ebc', 'n_hops', 'ph']
